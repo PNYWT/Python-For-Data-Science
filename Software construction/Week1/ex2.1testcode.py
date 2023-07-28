@@ -86,40 +86,59 @@ print(sInput,"seconds equals",h,"hour(s)",m,"minute(s)","and",s,"second(s)")
 #   5: 3
 #   1: 3
 
-def change(money):
-    b = 0.0
-    if money >= 500:
-        b = money//500
-        return b
-    elif money >= 100 and money < 500:
-        b = money//100
-        return b
-    elif money >= 20 and money < 100:
-        b = money//20
-        return b
-    elif money >= 5 and money < 10:
-        b = money//5
-        return b
-    elif money >= 1 and money < 5:
-        b = money//1
-        return b
+"""
+def change(money,value):
+    b = money // value
+    return b
 
+# ต้องเติมโค้ดให้สมบูรณ์
 money = int(input("Enter total money: "))
-b500 = change(money)
+b500 = change(money,500)
 left = money - b500*500
-b100 = change(left)
+b100 = change(left,100)
 left = left - b100*100
-print("leftleftleftleftleft",left)
-#บัคเคสนี้อยู่
-b20 = change(left)
+b20 = change(left,20)
 left = left - b20*20
-b5 = change(left)
-left = left - b5*5
-b1 = change(left)
 
+b5 = change(left,5)
+left = left - b5*5
+b1 = change(left,1)
 
 print("500: %d" % b500)
 print("100: %d" % b100)
 print(" 20: %d" % b20)
 print("  5: %d" % b5)
 print("  1: %d" % b1)
+"""
+
+"""
+def digit(num):
+   if num >= 0 and num <= 9999:
+      return num % 10
+   
+def tens(num):
+   if num >= 0 and num <= 9999:
+      return (num // 10) % 10
+   
+def hundreds(num):
+   if num >= 0 and num <= 9999:
+      return (num // 100) % 10
+   
+def thousands(num):
+   if num >= 0 and num <= 9999:
+      return num // 1000
+   
+
+def sum_digits(num):
+    if num >= 0 and num <= 9999:
+        allNumber = (digit(num), tens(num), hundreds(num), thousands(num))
+        sumNumber = sum(allNumber)
+        return sumNumber
+
+n   = int(input('Enter a number (0 to 9999): '))
+print('Digit place is %d.' % (digit(n)))
+print('Tens place is %d.' % (tens(n)))
+print('Hundreds place is %d.' % (hundreds(n)))
+print('Thousands place is %d.' % (thousands(n)))
+print('Sum of all digits is %d.' % sum_digits(n))
+"""
