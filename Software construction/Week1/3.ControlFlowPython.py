@@ -247,22 +247,139 @@ Use constant variable ADMIN_USERNAME and ADMIN_PASSWORD when you check username 
 #         else:
 #             print("Not selected")
 
+# TVs = int(input("How many TVs? "))
+# dvdPlayers = int(input("How many DVD players? "))
+# audioSys = int(input("How many Audio Systems? "))
 
-TVs = int(input("How many TVs? "))
-dvdPlayers = int(input("How many DVD players? "))
-audioSys = int(input("How many Audio Systems? "))
+# product = {"TV":6000,
+#            "DVD player":1500,
+#            "Audio Systems":3000}
 
-product = {"TV":6000,
-           "DVD player":1500,
-           "Audio Systems":3000}
+# def calTotal(TVscount,dvdPlayersCount,audioSysCount):
+#     totalPay = 0
+#     if TVscount > 0:
+#         totalPay = product["TV"]*TVscount
+#     if dvdPlayersCount > 0:
+#         totalPay += product["DVD player"]*dvdPlayersCount
+#     if audioSysCount > 0:
+#         totalPay += product["Audio Systems"]*audioSysCount
+#     return float(totalPay)
 
-totalPay = 0
+# totalPrice = calTotal(TVs,dvdPlayers,audioSys)
+# print("Total price is %.2f baht." %totalPrice)
 
-if TVs >= 1:
-    totalPay += product["TV"]*TVs
-elif dvdPlayers >= 1:
-    totalPay += product["DVD player"]*dvdPlayers
-elif audioSys >= 1:
-    totalPay += product["Audio Systems"]*audioSys
+# if totalPrice >= 24000:
+#     totalDiscount = float(totalPrice*0.20)
+#     print("You've got a discount of %.2f baht." %totalDiscount)
+#     dif = totalPrice - totalDiscount
+#     print("Your payment is %.2f baht. Thank you!" %dif)
+# else:
+#     print("Your payment is %.2f baht. Thank you!" %calTotal(TVs,dvdPlayers,audioSys))
 
-print("Total price is %.2f baht." %totalPay)
+    
+
+"""
+Write a program to help the buffet restaurant calculate the price for a customer.
+
+The price for Japanese buffet is 1000 Baht, and the price for Korean buffet is 1500 Baht.
+ If today is Wednesday, he will receive 15% discount.
+"""
+# buffetType = input("Enter your buffet choice: ")
+
+# total = 0
+# if buffetType.lower() == "Korean".lower():
+#     total = 1500
+#     isWadnesday = input("Is today Wednesday (yes/no)? ")
+#     if isWadnesday.lower() == "yes".lower():
+#         total = total - total*0.15
+#         print("Your payment is %.2f Baht." %total)
+#     else:
+#         print("Your payment is %.2f Baht." %total)
+# elif buffetType.lower() == "Japanese".lower():
+#     total = 1000
+#     isWadnesday = input("Is today Wednesday (yes/no)? ")
+#     if isWadnesday.lower() == "yes".lower():
+#         total = total - total*0.15
+#         print("Your payment is %.2f Baht." %total)
+#     else:
+#         print("Your payment is %.2f Baht." %total)
+# else:
+#     print("Sorry, there is no",buffetType,"buffet.")
+
+
+"""
+จงเขียนโปรแกรมสำหรับเล่นเกมทายตัวเลข โดยกำหนดให้โปรแกรมสร้างเลขเป้าหมาย (target) 
+คือค่า 72 แล้วรับตัวเลขจากผู้เล่นที่ทายเข้ามา
+โดยให้เพิ่มการเปรียบเทียบเพื่อบอกผลการทายตัวเลขในกรณีที่ทายไม่ถูกเป็น 3 กรณี 
+คือ มากกว่าค่าเป้าหมาย (too high), น้อยกว่าค่าเป้าหมาย (too low) และเท่ากับค่าเป้าหมาย
+"""
+# target = 72
+
+# try:
+#     num = int(input("Enter your guess (0 - 100): "))
+#     if num == target:
+#         print("Congratulations, your guess is correct.")
+#     elif num < target and num >= 0 and num <= 100:
+#         print("Sorry, your guess is too low, try again later.")
+#     elif num > target and num >= 0 and num <= 100:
+#         print("Sorry, your guess is too high, try again later.")
+#     else:
+#         print("Sorry, out of range, try again later.")
+# except:
+#     print("Sorry, out of range, try again later.")
+
+
+"""
+ปีอธิกสุรทิน (leap year)
+จงเขียนโปรแกรมเพื่อรับค่าปีคริสตศักราชแล้วแสดงผลว่าปีดังกล่าวเป็นปีอธิกสุรทินหรือไม่ โดยปีอธิกสุรทินหมายถึง
+
+ปีที่หารด้วย 4 ลงตัว ยกเว้นเฉพาะปีที่หารด้วย 100 ลงตัวด้วย
+ปีที่หารด้วย 400 ลงตัว
+ถ้าข้อมูลเข้าผิดพลาด (ค่าน้อยกว่า 1) ให้พิมพ์คำว่า "Invalid year."
+"""
+# def is_leap_year(year):
+#     if (year % 4 == 0 and year % 100 != 0) or year % 400 == 0:
+#         return True
+#     else:
+#         return False
+    
+# year = int(input("Enter year: "))
+
+# if year >= 1:
+#     if is_leap_year(year):
+#         print(f"{year} is a leap year.")
+#     else:
+#         print(f"{year} is not a leap year.")
+# else:
+#     print("Invalid year.")
+
+"""
+- ผู้รับสิทธิ NIT ต้องเป็นคนไทยอายุตั้งแต่ 15-60 ปี ที่กําลังทํางานอยู่ 
+โดยไม่กําหนดสายอาชีพ และมีรายได้สุทธิ (net income) ตั้งแต่ 1 – 79,999 บาทต่อปี
+- โดยรายได้ตั้งแต่ 1 – 30,000 บาทต่อปี จะได้เงินโอนภาษีจากรัฐ 20% ของรายได้สุทธิ 
+แต่หากรายได้มากกว่า 30,000 บาทต่อปี ก็จะได้รับโอนเงินภาษีลดลง 12% ของส่วนที่เกิน 30,000 บาท 
+(20% ของ 30,000 ลบด้วย 12% ของส่วนเกิน) ไปจนถึงรายได้ 79,999 บาท
+- ส่วนที่มีรายได้ 80,000 บาทขึ้นไป จะไม่ได้รับเงินโอนภาษีจากรัฐ 
+เพราะถือว่ามีรายได้ที่มากพอแล้ว เทียบเคียงกับการได้รับค่าแรงขั้นต่ำ 300 บาทต่อวัน
+"""
+
+# age = int(input("Enter your age: "))
+# income = int(input("Enter your net income: "))
+# def checkRangAge(ageInput, incomeInput):
+#     taxSave = 0
+#     if ageInput >= 15 and ageInput <= 60:
+#         if incomeInput >= 1 and incomeInput <= 79999:
+#             if incomeInput >= 1 and incomeInput <= 30000:
+#                 taxSave = incomeInput * 0.20
+#             elif incomeInput > 30000 and incomeInput <= 79999:
+#                 taxSave = 0.20 * 30000 - 0.12 * (incomeInput-30000)
+#             elif incomeInput >= 80000:
+#                 taxSave = 0
+#             print("Your negative income tax is %.2f Baht." %taxSave)
+#         else:
+#              print("Invalid income.")
+#     else:
+#         print("Invalid age.")
+
+
+# checkRangAge(age,income)
