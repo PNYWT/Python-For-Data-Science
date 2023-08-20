@@ -49,53 +49,69 @@ x
 # callInput()
 
 """
-Enter a string: xy
-Enter arrow's size (greater than 0): 9
-xy
- xy
-  xy
-   xy
-    xy
-   xy
-  xy
- xy
-xy
+How many day : 5
+Input price in day 1 : 123.5
+Input price in day 2 : 120.65
+Input price in day 3 : 210.1
+Input price in day 4 : 45
+Input price in day 5 : 52
+Summary price = 514.85
 """
 
-# def print_arrow(string, size):
-#     if size <= 0:
-#         print("Size must be greater than 0.")
+# day = int(input("How many day : "))
+# discount = 5/100
+# arrPerDayPrice = []
+# totalPrice = 0
+# for i in range(day):
+#     perDayPrice = float(input(f"Input price in day {i+1} : "))
+#     arrPerDayPrice.append(perDayPrice)
+#     if len(arrPerDayPrice) >= 2:
+#         discount += 1/100
+#         totalPrice += arrPerDayPrice[i] - (arrPerDayPrice[i]*discount)
 #     else:
-#         for i in range(size):
-#             print(" " * i + string)
-#         for i in range(size - 1, 0, -1):
-#             print(" " * i + string)
+#         totalPrice += arrPerDayPrice[i] - (arrPerDayPrice[i]*discount)
 
-# input_string = input("Enter a string: ")
-# arrow_size = int(input("Enter arrow's size (greater than 0): "))
+# print("Summary price = %.2f" %totalPrice)
 
-# print_arrow(input_string, arrow_size)
+"""
+Enter your guess (0 - 100): 45
+Sorry, your guess is too low, try again later.
+Enter your guess (0 - 100): 99
+Sorry, your guess is too high, try again later.
+Enter your guess (0 - 100): -5
+Sorry, out of range, try again later.
+Enter your guess (0 - 100): 72
+Congratulations, your guess is correct.
+"""
 
-import math
-arr = []
-def addValueArr():
-    a = int(input("Input a: "))
-    arr.append(a)
-    b = int(input("Input b: "))
-    arr.append(b)
-    c = int(input("Input c: "))
-    arr.append(c)
-    d = int(input("Input d: "))
-    arr.append(d)
-    e = int(input("Input e: "))
-    arr.append(e)
+# target = 72
+# guess = None
 
-def calMeanAndSD(arrTmp):
-    mean = sum(arrTmp)/len(arrTmp)
-    print("mean: %.3f" %mean)
-    sd = math.sqrt(sum((x - mean) ** 2 for x in arrTmp) / len(arrTmp))
-    print("sd: %.3f" %sd)
+# while guess != target:
+#     guess = int(input("Enter your guess (0 - 100): "))
+#     if guess < 0 or guess > 100:
+#         print("Sorry, out of range, try again later.")
+#     elif guess < target:
+#         print("Sorry, your guess is too low, try again later.")
+#     elif guess > target:
+#         print("Sorry, your guess is too high, try again later.")
+#     else:
+#         print("Congratulations, your guess is correct.")
+#         break
 
 
-addValueArr()
-calMeanAndSD(arr)
+"""
+Enter a string: *
+Enter arrow's size (greater than 0): 3
+*
+ *
+*
+"""
+rows = int(input("Enter arrow's size (greater than 0): "))
+
+for row in range(0,rows):
+    for col in range(0,rows):
+        if (row-col==3) or (col-row==3):
+            print("*",end="")
+        else:
+            print("",end="")
