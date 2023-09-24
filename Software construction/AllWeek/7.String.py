@@ -85,39 +85,4 @@
 # print(result)
 
 
-def transcribe(dna):
-    rna = ""
-    for base in dna:
-        if base == "A":
-            rna += "U"
-        elif base == "C":
-            rna += "G"
-        elif base == "G":
-            rna += "C"
-        elif base == "T":
-            rna += "A"
-    return rna
-
-def translate(rna):
-    amino_acids = 0
-    i = 0
-    while i < len(rna):
-        if rna[i:i+3] == "AUG":  # หา start codon
-            amino_acids += 1
-            i += 3  # ข้าม start codon
-            while i < len(rna):
-                codon = rna[i:i+3]
-                if codon in ("UAA", "UGA", "UAG"):  # หา stop codon
-                    break
-                amino_acids += 1
-                i += 3
-        else:
-            i += 1
-    return amino_acids
-
-dna = input("DNA: ")
-rna = transcribe(dna)
-amino_acids = translate(rna)
-print(f"{amino_acids} Amino acid(s)")
-
 
