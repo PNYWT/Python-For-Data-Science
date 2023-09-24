@@ -1,8 +1,9 @@
 class BankAccount:
+
     def withdraw(self, amount):
         self.balance = self.balance - amount
 
-if __name__ == '__main__':
+if __name__ == '__main__': #เขียนทดสอบเฉยๆ จำลองการเขียนใช้จริง
     mrA = BankAccount()
     mrA.balance = 1000
     print("mrA ->",mrA.balance)
