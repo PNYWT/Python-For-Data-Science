@@ -84,5 +84,23 @@
 # result = is_password_strong(password)
 # print(result)
 
+"""
+เฉลย 1
+Enter value: 1.62712
+Enter Precision: 3
+1.627
+เฉลย 2
+Enter value: 1.62712
+Precision: 2
+1.63
 
+# 1.8534532
+# 1
+# การคำนวณถ้า 1.65 Precision 1 ปัดลง
+"""
+# # รับค่าจำนวนทศนิยมจากผู้ใช้
+# value = float(input("Enter value: "))
+# precision = int(input("Precision: "))
+# result = custom_round(value, precision + 1)
+# # print(result)
 

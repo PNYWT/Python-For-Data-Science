@@ -15,8 +15,7 @@ print("test 5 should be -1:", avarage({0, -1, -2}))
 
 #ClassBankAccount.py <- เขียนแบบ Object
 import ClassBankAccount as CBA
-mrP = CBA.BankAccount()
-mrP.balance = 5000
+mrP = CBA.BankAccount("mrP", 5000)
 mrP.withdraw(400)
 print("mrP ->",mrP.balance)
 
